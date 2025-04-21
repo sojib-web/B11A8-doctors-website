@@ -2,6 +2,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import Button from "../Botton/Button";
+
 const Navbar = () => {
   return (
     <div>
@@ -57,9 +59,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <button className="btn text-white bg-[#176AE5] rounded-2xl">
-            Emergency
-          </button>
+          <Button label="Emergency" />
         </div>
       </div>
     </div>
