@@ -1,46 +1,49 @@
 [
   {
-    "image": "https://i.ibb.co.com/MD8D40vT/dr-sadia-rahman.webp",
+    "image": "https://i.ibb.co.com/NwhJxNf/portrait-of-smiling-doctor-in-hospital-corridor-CAIF18535.jpg",
     "name": "Dr. Sadia Rahman",
     "education": "MBBS (DMC), FCPS (Gynecology)",
     "specialities": "Gynecology, Obstetrics",
-    "experience": "10 years",
+    "experience": "+10 years",
     "registration_number": "BMDC-112233",
     "designation": "Consultant, Gynecology",
     "workplace": "Dhaka Medical College Hospital",
     "consultation_fee": "৳800",
-    "availability": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"]
+    "availability": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+    "Available": "Available"
   },
   {
-    "image": "https://i.ibb.co.com/cXLBKnCb/dr-hasan-mahbub1716284487.png",
+    "image": "https://i.ibb.co.com/KzVTQXR1/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-cro.jpg",
     "name": "Dr. Mahbub Hasan",
     "education": "MBBS (SSMC), MD (Cardiology)",
     "specialities": "Cardiology",
-    "experience": "12 years",
+    "experience": "+12 years",
     "registration_number": "BMDC-223344",
     "designation": "Senior Consultant, Cardiology",
     "workplace": "Labaid Specialized Hospital",
     "consultation_fee": "৳1200",
-    "availability": ["Sunday", "Monday", "Tuesday", "Wednesday", "Saturday"]
+    "availability": ["Sunday", "Monday", "Tuesday", "Wednesday", "Saturday"],
+    "Available": "Not Available"
   },
   {
-    "image": "https://i.ibb.co.com/dsyG02Dj/an-indian-young-female-doctor-isolated-on-green-ai-generated-photo.jpg",
+    "image": "https://i.ibb.co.com/gMkMCGdd/dsfdsf.jpg",
     "name": "Dr. Afrin Hossain",
     "education": "MBBS (CMC), FCPS (Dermatology)",
     "specialities": "Dermatology, Venereology",
-    "experience": "9 years",
+    "experience": "+9 years",
     "registration_number": "BMDC-334455",
     "designation": "Skin Specialist",
     "workplace": "Popular Diagnostic Center, Dhanmondi",
     "consultation_fee": "৳700",
-    "availability": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"]
+    "availability": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+    "Available": "Available"
   },
   {
     "image": "https://i.ibb.co.com/WS39RQz/360-F-260040900-o-O6-YW1s-HTn-Kxby4-Gcj-Cvtyp-UCWjn-QRg5.jpg",
     "name": "Dr. Tariq Aziz",
     "education": "MBBS (RMC), MS (Orthopedics)",
     "specialities": "Orthopedic Surgery",
-    "experience": "15 years",
+    "experience": "+15 years",
     "registration_number": "BMDC-445566",
     "designation": "Consultant, Orthopedics",
     "workplace": "Ibn Sina Hospital, Dhanmondi",
@@ -52,102 +55,111 @@
       "Wednesday",
       "Thursday",
       "Saturday"
-    ]
+    ],
+    "Available": "Not Available"
   },
   {
-    "image": "https://i.ibb.co.com/QjPHt30G/360-F-305412791-XRNi-Wa-FCREj-LLp-SQfj0e736fo-Bo-YXXYv.jpg",
+    "image": "https://i.ibb.co.com/tMHrsm52/smiling-female-doctor-holding-medical-records-lab-coat-her-office-clipboard-looking-camera-56673035.webp",
     "name": "Dr. Nasima Khan",
     "education": "MBBS (BSMMU), MD (Pediatrics)",
     "specialities": "Pediatrics",
-    "experience": "11 years",
+    "experience": "+11 years",
     "registration_number": "BMDC-556677",
     "designation": "Associate Professor, Pediatrics",
     "workplace": "Bangabandhu Sheikh Mujib Medical University",
     "consultation_fee": "৳900",
-    "availability": ["Sunday", "Monday", "Tuesday", "Wednesday"]
+    "availability": ["Sunday", "Monday", "Tuesday", "Wednesday"],
+    "Available": "Available"
   },
   {
     "image": "https://i.ibb.co.com/GQxgS3gm/360-F-320523164-tx7-Rdd7-I2-XDTvv-Kfz2o-Ru-Rp-KOPE5z0ni.jpg",
     "name": "Dr. Fahim Ahmed",
     "education": "MBBS (DMC), MD (Neurology)",
     "specialities": "Neurology",
-    "experience": "13 years",
+    "experience": "+13 years",
     "registration_number": "BMDC-667788",
     "designation": "Neurologist",
     "workplace": "Square Hospital, Dhaka",
     "consultation_fee": "৳1300",
-    "availability": ["Monday", "Tuesday", "Wednesday", "Saturday"]
+    "availability": ["Monday", "Tuesday", "Wednesday", "Saturday"],
+    "Available": "Available"
   },
   {
     "image": "https://i.ibb.co.com/GfC08WhZ/360-F-313778250-Y0o5can6-MA490-Nt7-G6p03-Zfu5f-Km-WCIv.jpg",
     "name": "Dr. Tania Kabir",
     "education": "MBBS (MMC), FCPS (ENT)",
     "specialities": "ENT",
-    "experience": "8 years",
+    "experience": "+8 years",
     "registration_number": "BMDC-778899",
     "designation": "ENT Specialist",
     "workplace": "Central Hospital, Dhaka",
     "consultation_fee": "৳800",
-    "availability": ["Sunday", "Tuesday", "Thursday"]
+    "availability": ["Sunday", "Tuesday", "Thursday"],
+    "Available": "Not Available"
   },
   {
-    "image": "https://i.ibb.co.com/PGfWXxVj/premium-photo-1664475450083-5c9eef17a191.jpg",
+    "image": "https://i.ibb.co.com/TxCQsx87/a.webp",
     "name": "Dr. Miraz Hasan",
     "education": "MBBS (RMC), MD (Internal Medicine)",
     "specialities": "Internal Medicine",
-    "experience": "10 years",
+    "experience": "+10 years",
     "registration_number": "BMDC-889900",
     "designation": "Medicine Specialist",
     "workplace": "United Hospital, Dhaka",
     "consultation_fee": "৳1000",
-    "availability": ["Monday", "Tuesday", "Thursday", "Saturday"]
+    "availability": ["Monday", "Tuesday", "Thursday", "Saturday"],
+    "Available": "Available"
   },
   {
-    "image": "https://i.ibb.co.com/PGfWXxVj/premium-photo-1664475450083-5c9eef17a191.jpg",
+    "image": "https://i.ibb.co.com/pvZTPXmt/sdfs.jpg",
     "name": "Dr. Zakia Sultana",
     "education": "MBBS (CMC), FCPS (Psychiatry)",
     "specialities": "Psychiatry",
-    "experience": "7 years",
+    "experience": "+7 years",
     "registration_number": "BMDC-990011",
     "designation": "Psychiatrist",
     "workplace": "National Institute of Mental Health",
     "consultation_fee": "৳900",
-    "availability": ["Sunday", "Monday", "Wednesday", "Friday"]
+    "availability": ["Sunday", "Monday", "Wednesday", "Friday"],
+    "Available": "Available"
   },
   {
     "image": "https://i.ibb.co.com/0yLY4QYs/293bb5c342dbb64de73e141c92cc6186.jpg",
     "name": "Dr. Rajib Hasan",
     "education": "MBBS (BSMMU), MS (Urology)",
     "specialities": "Urology",
-    "experience": "14 years",
+    "experience": "+14 years",
     "registration_number": "BMDC-110022",
     "designation": "Urologist",
     "workplace": "Green Life Hospital",
     "consultation_fee": "৳1100",
-    "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Saturday"]
+    "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Saturday"],
+    "Available": "Available"
   },
   {
-    "image": "https://i.ibb.co.com/0R5qR47D/healthcare-workers-preventing-virus-quarantine-campaign-concept-cheerful-friendly-asian-female-physi.jpg",
+    "image": "https://i.ibb.co.com/4nH9M6bK/xzczx.jpg",
     "name": "Dr. Nabila Akhtar",
     "education": "MBBS (SSMC), FCPS (Ophthalmology)",
     "specialities": "Eye Specialist",
-    "experience": "9 years",
+    "experience": "+9 years",
     "registration_number": "BMDC-120033",
     "designation": "Consultant, Ophthalmology",
     "workplace": "Islamia Eye Hospital",
     "consultation_fee": "৳850",
-    "availability": ["Sunday", "Monday", "Wednesday", "Thursday"]
+    "availability": ["Sunday", "Monday", "Wednesday", "Thursday"],
+    "Available": "Available"
   },
   {
-    "image": "https://i.ibb.co.com/ksh2kJkf/1667016073885.jpg",
+    "image": "https://i.ibb.co.com/B56QkJns/dfg.jpg",
     "name": "Dr. Sharif Chowdhury",
     "education": "MBBS (MMC), MD (Gastroenterology)",
     "specialities": "Gastroenterology",
-    "experience": "16 years",
+    "experience": "+16 years",
     "registration_number": "BMDC-130044",
     "designation": "Gastroenterologist",
     "workplace": "Evercare Hospital Dhaka",
     "consultation_fee": "৳1500",
-    "availability": ["Sunday", "Tuesday", "Thursday", "Saturday"]
+    "availability": ["Sunday", "Tuesday", "Thursday", "Saturday"],
+    "Available": "Not Available"
   }
 ]
