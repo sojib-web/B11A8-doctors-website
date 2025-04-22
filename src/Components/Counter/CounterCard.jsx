@@ -24,7 +24,7 @@ const CounterCard = ({ doctors }) => {
       <div className="shadow-lg bg-[#FFFFFF] rounded-2xl items-center text-center p-4">
         <img src={counterImg} alt="" className="mx-auto mb-4" />
         <p className="text-3xl font-bold text-blue-600">
-          <CountUp end={total_doctors} duration={2} suffix="+" />
+          <CountUp end={total_doctors} duration={5} suffix="+" />
         </p>
         <h3 className="text-lg font-semibold mb-2">Total Doctors</h3>
       </div>
@@ -32,7 +32,7 @@ const CounterCard = ({ doctors }) => {
       <div className="shadow-lg bg-[#FFFFFF] rounded-2xl items-center text-center p-4">
         <img src={counterImg1} alt="" className="mx-auto mb-4" />
         <p className="text-3xl font-bold text-blue-600">
-          <CountUp end={total_patients} duration={2} suffix="+" />
+          <CountUp end={total_patients} duration={5} suffix="+" />
         </p>
         <h3 className="text-lg font-semibold mb-2"> Patients</h3>
       </div>
@@ -40,7 +40,7 @@ const CounterCard = ({ doctors }) => {
       <div className="shadow-lg bg-[#FFFFFF] rounded-2xl items-center text-center p-4">
         <img src={counterImg2} alt="" className="mx-auto mb-4" />
         <p className="text-3xl font-bold text-blue-600">
-          <CountUp end={total_reviews} duration={2} suffix="+" />
+          <CountUp end={total_reviews} duration={5} suffix="+" />
         </p>
         <h3 className="text-lg font-semibold mb-2">Total Reviews</h3>
       </div>
@@ -48,7 +48,7 @@ const CounterCard = ({ doctors }) => {
       <div className="shadow-lg bg-[#FFFFFF] rounded-2xl items-center text-center p-4">
         <img src={counterImg3} alt="" className="mx-auto mb-4" />
         <p className="text-3xl font-bold text-blue-600">
-          <CountUp end={total_staff} duration={2} suffix="+" />
+          <CountUp end={total_staff} duration={5} suffix="+" />
         </p>
         <h3 className="text-lg font-semibold mb-2">Total Stuffs</h3>
       </div>

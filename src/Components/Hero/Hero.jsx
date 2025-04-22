@@ -8,7 +8,7 @@ const Hero = ({ handleSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
-    <div className="px-4 py-16 w-full mx-auto bg-white sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 shadow-2xl rounded-2xl mt-16 mb-16 ">
+    <div className="px-4 py-16 w-full mx-auto bg-gray-200  border-white sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 shadow rounded-2xl mt-16 mb-16 ">
       <TextHeader
         title="Dependable Care, Backed by Trusted Professionals."
         description="Our platform connects you with verified, experienced doctors across various specialties — all at your convenience. Whether it's a routine checkup or urgent consultation, book appointments in minutes and receive quality care you can trust."

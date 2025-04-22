@@ -1,12 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
-import Footer from "../../Components/Footer/Footer";
 
 const ErrorPage = () => {
   return (
     <div>
-      <Navbar />
       <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
         <div className="text-center">
           <h1 className="text-6xl font-bold text-red-500">404</h1>
@@ -25,7 +23,6 @@ const ErrorPage = () => {
           </Link>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

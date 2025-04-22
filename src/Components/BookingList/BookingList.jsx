@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 import BarCharts from "../BarChart/BarCharts";
 
 const BookingList = () => {
-  const chartData = JSON.parse(localStorage.getItem("chartData")) || [];
+  const initialChartData = JSON.parse(localStorage.getItem("chartData")) || [];
   const data = useLoaderData();
   const bookedDoctorIds =
     JSON.parse(localStorage.getItem("bookedDoctors")) || [];
@@ -16,12 +16,16 @@ const BookingList = () => {
   const [bookedDoctors, setBookedDoctors] = useState(
     data.filter((doctor) => bookedDoctorIds.includes(doctor.id))
   );
+  const [chartData, setChartData] = useState(initialChartData);
 
   const handleCancel = (id) => {
     const updatedIds = bookedDoctorIds.filter((doctorId) => doctorId !== id);
     localStorage.setItem("bookedDoctors", JSON.stringify(updatedIds));
+
     const updatedChartData = chartData.filter((entry) => entry.id !== id);
     localStorage.setItem("chartData", JSON.stringify(updatedChartData));
+    setChartData(updatedChartData);
+
     const cancelledDoctor = bookedDoctors.find((doctor) => doctor.id === id);
     toast.success(
       `Appointment removed with ${cancelledDoctor?.name} successfully!`
@@ -32,23 +36,24 @@ const BookingList = () => {
 
   return (
     <div className="mt-20 mb-20">
-      <div className="flex justify-center items-center bg-white mb-20 rounded-2xl shadow">
-        <BarCharts data={chartData} />
-      </div>
-
       <TextHeader
         title="My Booked Appointments"
         description="Here's a list of all your scheduled doctor appointments."
       />
+      {chartData.length > 0 && (
+        <div className="flex justify-center items-center bg-white mb-20 rounded-2xl shadow">
+          <BarCharts data={chartData} />
+        </div>
+      )}
 
       {bookedDoctors.length === 0 ? (
         <div className="flex flex-col justify-center items-center mb-20">
-          <p className="mb-4 text-red-500 text-lg te">
-            You don't have any appointments.
+          <p className="mb-4 text-bold font-bold text-4xl">
+            You Have not Booked any appointment yet
           </p>
           <Link
             to="/"
-            className="inline-block px-6 py-2 bg-[#176AE5] text-white rounded-full shadow hover:bg-[#077d27] transition duration-200"
+            className="inline-block px-6 py-2 bg-[#176AE5] text-white rounded-full shadow transition duration-200"
           >
             Book an Appointment
           </Link>

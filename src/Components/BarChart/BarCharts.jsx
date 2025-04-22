@@ -1,38 +1,55 @@
 import React from "react";
-import { BarChart, Bar, XAxis, YAxis, Cell } from "recharts";
+import {
+  BarChart,
+  Bar,
+  Cell,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  ResponsiveContainer,
+  Tooltip,
+} from "recharts";
 
-const CustomBarShape = (props) => {
-  const { x, y, width, height, fill } = props;
+const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "red", "pink"];
 
-  const points = [
-    { x: x + width / 2, y },
-    { x: x, y: y + height },
-    { x: x + width, y: y + height },
-  ];
+const getPath = (x, y, width, height) => {
+  return `M${x},${y + height}
+    C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3} ${
+    x + width / 2
+  },${y}
+    C${x + width / 2},${y + height / 3} ${x + (2 * width) / 3},${y + height} ${
+    x + width
+  },${y + height}
+    Z`;
+};
 
-  return (
-    <polygon
-      points={points.map((point) => `${point.x},${point.y}`).join(" ")}
-      fill={fill}
-    />
-  );
+const TriangleBar = (props) => {
+  const { fill, x, y, width, height } = props;
+  return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
 };
 
 const BarCharts = ({ data }) => {
   return (
-    <div className="overflow-hidden">
-      <div className="p-5">
-        <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800">
-          Patient Statistics by Doctor
-        </h2>
-      </div>
-      <div className="flex justify-center items-center">
-        <BarChart width={600} height={300} data={data}>
+    <div className="w-full h-[300px]">
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart
+          data={data}
+          margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
           <YAxis />
-          <Bar dataKey="uv" fill="red" shape={<CustomBarShape />} />
+          <Tooltip />
+          <Bar dataKey="uv" shape={<TriangleBar />} label={{ position: "top" }}>
+            {data.map((entry, index) => (
+              <Cell
+                key={`cell-${index}`}
+                fill={colors[index % colors.length]}
+              />
+            ))}
+          </Bar>
         </BarChart>
-      </div>
+      </ResponsiveContainer>
     </div>
   );
 };
