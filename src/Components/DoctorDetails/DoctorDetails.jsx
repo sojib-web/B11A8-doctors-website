@@ -1,9 +1,106 @@
+// @ts-nocheck
 import React from "react";
+import TextHeader from "../TextHeader/TextHeader";
+import { useLoaderData, useParams } from "react-router-dom";
+import Button from "../Botton/Button";
 
 const DoctorDetails = () => {
+  const data = useLoaderData();
+  console.log(data);
+
+  const { id } = useParams();
+  console.log(id);
+
+  const singleDoctor = data.find((doctor) => doctor.id === parseInt(id));
+  console.log(singleDoctor);
+  const {
+    name,
+    image,
+    specialities,
+    workplace,
+    education,
+    registration_number,
+    availability,
+    consultation_fee,
+  } = singleDoctor;
   return (
-    <div>
-      <h1>dksfsdh</h1>
+    <div className="mt-20">
+      <TextHeader
+        title={`Doctor’s Profile Details`}
+        description={`Our platform connects you with verified, experienced doctors across various specialties — all at your convenience. Whether it's a routine checkup or urgent consultation, book appointments in minutes and receive quality care you can trust.`}
+      />
+
+      <div className="flex flex-col w-full overflow-hidden bg-white rounded-2xl shadow lg:flex-row">
+        <div className="relative lg:w-1/2 overflow-hidden p-8">
+          <div className="rounded-2xl overflow-hidden">
+            <img
+              src={image}
+              alt=""
+              className="object-cover w-full h-80 lg:h-full"
+            />
+          </div>
+        </div>
+        <div className="flex flex-col justify-center p-8 bg-white lg:p-16 lg:pl-10 lg:w-1/2">
+          <div>
+            <p className="mb-3 text-3xl font-extrabold leading-none sm:text-4xl">
+              {name}
+            </p>
+          </div>
+          <p className="mb-5 text-gray-800">
+            <span className="font-bold">Specialities : </span>
+            {specialities}
+          </p>
+          <p className="mb-5 text-gray-800">
+            <span className="font-bold">Registration No : </span>
+            {registration_number}
+          </p>
+          <p className="mb-5 text-gray-800">
+            <span className="font-bold">Education : </span>
+            {education}
+          </p>
+
+          <p className=" mb-5 text-gray-800">
+            <span className="font-bold">Working at : </span>
+            {workplace}
+          </p>
+          <p className="mb-5 text-gray-800">
+            <span className="font-bold">Consultation Fee: </span>
+            {consultation_fee}
+          </p>
+          <div className="divider m-2 p-0"></div>
+          <div className="mt-4 space-y-2">
+            <h3 className="text-lg font-semibold text-gray-800">Available:</h3>
+            <div className="flex gap-2 flex-wrap">
+              {availability.map((day, index) => (
+                <button
+                  key={index}
+                  className="px-4 py-2 bg-[#FFA0001A] text-[#FFA000] rounded-full text-sm hover:bg-[#09982F] hover:text-white transition duration-200"
+                >
+                  {day}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="flex items-center mt-5"></div>
+        </div>
+      </div>
+
+      <div className="card text-neutral-content w-full mt-20 bg-white shadow">
+        <div className="card-body items-center text-center">
+          <h2 className="card-title text-[#141414] text-2xl">
+            Book an Appointment
+          </h2>
+
+          <div className="card-actions w-full flex justify-between mt-4">
+            <button className="text-[#0F0F0F] text-xl">Availability</button>
+            <button className="btn bg-[#09982F1A] text-[#09982F] rounded-2xl">
+              Doctor Available Today
+            </button>
+          </div>
+
+          <Button label={`Book Appointment Now`} className="w-full mt-5" />
+        </div>
+      </div>
     </div>
   );
 };

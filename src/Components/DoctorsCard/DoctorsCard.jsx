@@ -1,6 +1,7 @@
 import React from "react";
 import { TbCircleLetterR } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import Button from "../Botton/Button";
 
 const DoctorsCard = ({ doctor }) => {
   const {
@@ -44,9 +45,11 @@ const DoctorsCard = ({ doctor }) => {
           </div>
           <div className="card-actions">
             <Link to={`doctorDetails/${id}`}>
-              <button className="bg-transparent hover:bg-blue-500 w-full text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded-2xl">
-                View Details
-              </button>
+              <Button
+                label={` View Details`}
+                onClick={undefined}
+                className={undefined}
+              />
             </Link>
           </div>
         </div>
