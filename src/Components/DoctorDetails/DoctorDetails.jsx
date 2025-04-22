@@ -4,7 +4,7 @@ import TextHeader from "../TextHeader/TextHeader";
 import { Link, useLoaderData, useNavigate, useParams } from "react-router-dom";
 import Button from "../Botton/Button";
 import toast from "react-hot-toast";
-
+import { TbCircleLetterR } from "react-icons/tb";
 const DoctorDetails = () => {
   const navigate = useNavigate();
   const data = useLoaderData();
@@ -19,6 +19,25 @@ const DoctorDetails = () => {
     } else {
       bookedDoctors.push(parseInt(id));
       localStorage.setItem("bookedDoctors", JSON.stringify(bookedDoctors));
+
+      // Chart update logic
+      const chartData = JSON.parse(localStorage.getItem("chartData")) || [];
+
+      const existingEntry = chartData.find((entry) => entry.name === name);
+      if (existingEntry) {
+        existingEntry.uv += 1;
+      } else {
+        chartData.push({
+          id: parseInt(id),
+          name: name,
+          uv: 1,
+          pv: 0, // you can set this as needed
+          amt: 0, // you can set this as needed
+        });
+      }
+
+      localStorage.setItem("chartData", JSON.stringify(chartData));
+
       toast.success(`Appointment scheduled with ${name} successfully!`);
       navigate(`/my_booking`);
     }
@@ -37,7 +56,7 @@ const DoctorDetails = () => {
     consultation_fee,
   } = singleDoctor;
   return (
-    <div className="mt-20">
+    <div className="mt-20 mb-20">
       <TextHeader
         title={`Doctor’s Profile Details`}
         description={`Our platform connects you with verified, experienced doctors across various specialties — all at your convenience. Whether it's a routine checkup or urgent consultation, book appointments in minutes and receive quality care you can trust.`}
@@ -110,8 +129,15 @@ const DoctorDetails = () => {
               Doctor Available Today
             </button>
           </div>
+          <div className="w-full text-left flex gap-3 items-center">
+            <TbCircleLetterR size={18} className="text-[#FFA000]" />
+            <button className=" text-[#FFA000]">
+              Due to high patient volume, we are currently accepting
+              appointments for today only. We appreciate your understanding and
+              cooperation.
+            </button>
+          </div>
 
-          <Link to={`/my_booking/${id}`}></Link>
           <Button
             onClick={handleBooking}
             label="Book Appointment Now"

@@ -5,11 +5,14 @@ import TextHeader from "../TextHeader/TextHeader";
 import { Link, useLoaderData } from "react-router-dom";
 import Button from "../Botton/Button";
 import toast from "react-hot-toast";
+import BarCharts from "../BarChart/BarCharts";
 
 const BookingList = () => {
+  const chartData = JSON.parse(localStorage.getItem("chartData")) || [];
   const data = useLoaderData();
   const bookedDoctorIds =
     JSON.parse(localStorage.getItem("bookedDoctors")) || [];
+
   const [bookedDoctors, setBookedDoctors] = useState(
     data.filter((doctor) => bookedDoctorIds.includes(doctor.id))
   );
@@ -17,23 +20,32 @@ const BookingList = () => {
   const handleCancel = (id) => {
     const updatedIds = bookedDoctorIds.filter((doctorId) => doctorId !== id);
     localStorage.setItem("bookedDoctors", JSON.stringify(updatedIds));
-
+    const updatedChartData = chartData.filter((entry) => entry.id !== id);
+    localStorage.setItem("chartData", JSON.stringify(updatedChartData));
     const cancelledDoctor = bookedDoctors.find((doctor) => doctor.id === id);
     toast.success(
       `Appointment removed with ${cancelledDoctor?.name} successfully!`
     );
+
     setBookedDoctors((prev) => prev.filter((doctor) => doctor.id !== id));
   };
 
   return (
     <div className="mt-20">
+      <div className="flex justify-center items-center bg-white mb-20 rounded-2xl shadow">
+        <BarCharts data={chartData} />
+      </div>
+
       <TextHeader
-        title={`My Booked Appointments`}
-        description={`Here's a list of all your scheduled doctor appointments.`}
+        title="My Booked Appointments"
+        description="Here's a list of all your scheduled doctor appointments."
       />
 
       {bookedDoctors.length === 0 ? (
-        <div className=" mx-auto items-center min-h-screen">
+        <div className="flex flex-col justify-center items-center mb-20">
+          <p className="mb-4 text-red-500 text-lg te">
+            You don't have any appointments.
+          </p>
           <Link
             to="/"
             className="inline-block px-6 py-2 bg-[#176AE5] text-white rounded-full shadow hover:bg-[#077d27] transition duration-200"
@@ -52,24 +64,23 @@ const BookingList = () => {
                 My Today Appointments
               </h2>
 
-              <Link> </Link>
               <div className="card-actions w-full flex justify-between mt-4">
-                <div>
-                  <button className="text-[#0F0F0F] text-xl text-start">
+                <div className="text-left">
+                  <p className="text-[#0F0F0F] text-xl font-semibold">
                     {doctor.name}
-                    <p className="text-sm text-[#0F0F0F99]">
-                      {doctor.specialities}
-                    </p>
-                  </button>
+                  </p>
+                  <p className="text-sm text-[#0F0F0F99]">
+                    {doctor.specialities}
+                  </p>
                 </div>
-                <button className="text-[#0F0F0F99] text-sm rounded-2xl">
-                  <p>Appointment Fee : {doctor.consultation_fee} Taka + Vat</p>
-                </button>
+                <div className="text-right text-[#0F0F0F99] text-sm">
+                  <p>Appointment Fee: {doctor.consultation_fee} Taka + VAT</p>
+                </div>
               </div>
 
               <Button
                 label="Cancel Appointment"
-                className="w-full mt-5 !text-black border border-[#FF0000] bg-transparent hover:bg-[#FF0000] "
+                className="w-full mt-5 !text-black border border-[#FF0000] bg-transparent hover:bg-[#FF0000]"
                 onClick={() => handleCancel(doctor.id)}
               />
             </div>

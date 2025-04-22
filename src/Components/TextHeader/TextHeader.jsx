@@ -1,8 +1,8 @@
 import React from "react";
 
-const TextHeader = ({ title, description }) => {
+const TextHeader = ({ title, description, className }) => {
   return (
-    <div>
+    <div className={className}>
       <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
         <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-[#0F0F0F] sm:text-4xl md:mx-auto">
           {title}

@@ -21,6 +21,7 @@ const DoctorsContainer = ({ doctors }) => {
         <TextHeader
           title="Our Best Doctors"
           description="Our platform connects you with verified, experienced doctors across various specialties — all at your convenience. Whether it's a routine checkup or urgent consultation, book appointments in minutes and receive quality care you can trust."
+          className={undefined}
         />
       </div>
 
@@ -35,6 +36,7 @@ const DoctorsContainer = ({ doctors }) => {
             <Button
               onClick={() => setShowAll((prv) => !prv)}
               label={showAll ? "Less Doctors" : "View All Doctors"}
+              className={undefined}
             />
           </div>
         </>

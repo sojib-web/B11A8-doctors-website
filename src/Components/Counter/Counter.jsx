@@ -5,9 +5,8 @@ import TextHeader from "../TextHeader/TextHeader";
 import CounterCard from "./CounterCard";
 
 const Counter = ({ doctors }) => {
-  console.log(doctors);
   return (
-    <div className="mt-20">
+    <div className="mt-20 mb-20">
       <TextHeader
         title="We Provide Best Medical Services"
         description="Our platform connects you with verified, experienced doctors across various specialties — all at your convenience. "
