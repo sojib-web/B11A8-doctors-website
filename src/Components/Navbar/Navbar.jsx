@@ -24,7 +24,7 @@ const Navbar = () => {
           <ul
             className={`menu menu-horizontal px-1 space-x-4 md:flex ${
               isMenuOpen ? "block" : "hidden"
-            } lg:flex transition-all duration-300 ease-in-out absolute bg-white w-full lg:left-0  top-0 lg:top-0 z-20 lg:relative  lg:mt-0 mt-20 lg:w-auto lg:bg-transparent rounded-2xl `}
+            } lg:flex transition-all duration-300 ease-in-out absolute bg-white w-full lg:left-0  top-0 lg:top-0 z-20 lg:relative md:hidden  lg:mt-0 mt-20 lg:w-auto lg:bg-transparent rounded-2xl `}
           >
             <li>
               <NavLink
@@ -71,7 +71,7 @@ const Navbar = () => {
 
         <div className="absolute top-4 right-4 lg:hidden cursor-pointer">
           <button className="text-2xl" onClick={toggleMenu}>
-            <IoMdMenu />
+            <IoMdMenu className="cursor-pointer" />
           </button>
         </div>
 
