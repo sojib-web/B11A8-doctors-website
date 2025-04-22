@@ -30,7 +30,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive ? "text-indigo-600" : ""
                 }
-                to="/abot"
+                to="/my_booking"
               >
                 My-Bookings
               </NavLink>

@@ -1,18 +1,31 @@
 // @ts-nocheck
 import React from "react";
 import TextHeader from "../TextHeader/TextHeader";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useNavigate, useParams } from "react-router-dom";
 import Button from "../Botton/Button";
+import toast from "react-hot-toast";
 
 const DoctorDetails = () => {
+  const navigate = useNavigate();
   const data = useLoaderData();
-  console.log(data);
-
   const { id } = useParams();
-  console.log(id);
+
+  const handleBooking = () => {
+    const bookedDoctors =
+      JSON.parse(localStorage.getItem("bookedDoctors")) || [];
+
+    if (bookedDoctors.includes(parseInt(id))) {
+      toast.error(`Already booked ${name}!`);
+    } else {
+      bookedDoctors.push(parseInt(id));
+      localStorage.setItem("bookedDoctors", JSON.stringify(bookedDoctors));
+      toast.success(`Appointment scheduled with ${name} successfully!`);
+      navigate(`/my_booking`);
+    }
+  };
 
   const singleDoctor = data.find((doctor) => doctor.id === parseInt(id));
-  console.log(singleDoctor);
+
   const {
     name,
     image,
@@ -98,7 +111,12 @@ const DoctorDetails = () => {
             </button>
           </div>
 
-          <Button label={`Book Appointment Now`} className="w-full mt-5" />
+          <Link to={`/my_booking/${id}`}></Link>
+          <Button
+            onClick={handleBooking}
+            label="Book Appointment Now"
+            className="w-full mt-5"
+          />
         </div>
       </div>
     </div>

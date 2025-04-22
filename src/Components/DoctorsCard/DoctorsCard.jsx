@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from "react";
 import { TbCircleLetterR } from "react-icons/tb";
 import { Link } from "react-router-dom";
