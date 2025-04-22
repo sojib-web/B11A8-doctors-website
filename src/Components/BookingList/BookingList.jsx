@@ -31,7 +31,7 @@ const BookingList = () => {
   };
 
   return (
-    <div className="mt-20">
+    <div className="mt-20 mb-20">
       <div className="flex justify-center items-center bg-white mb-20 rounded-2xl shadow">
         <BarCharts data={chartData} />
       </div>

@@ -20,7 +20,6 @@ const DoctorDetails = () => {
       bookedDoctors.push(parseInt(id));
       localStorage.setItem("bookedDoctors", JSON.stringify(bookedDoctors));
 
-      // Chart update logic
       const chartData = JSON.parse(localStorage.getItem("chartData")) || [];
 
       const existingEntry = chartData.find((entry) => entry.name === name);
@@ -31,8 +30,7 @@ const DoctorDetails = () => {
           id: parseInt(id),
           name: name,
           uv: 1,
-          pv: 0, // you can set this as needed
-          amt: 0, // you can set this as needed
+          pv: 0,
         });
       }
 
