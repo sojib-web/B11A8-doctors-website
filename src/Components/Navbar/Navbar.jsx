@@ -13,8 +13,8 @@ const Navbar = () => {
   };
 
   return (
-    <div>
-      <div className="navbar shadow-sm mx-auto px-8 md:px-12 lg:px-16 xl:px-24 relative">
+    <div className="md:container mx-auto ">
+      <div className="navbar mx-auto px-8 md:px-12 lg:px-16 xl:px-24 relative">
         <div className="navbar-start space-x-2">
           <img src={logo} alt="" className="w-10" />
           <span className="text-xl font-bold">MediCare Hub</span>
